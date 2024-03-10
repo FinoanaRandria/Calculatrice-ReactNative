@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Switch } from "react-native";
+import { StyleSheet, Text, View, Switch, TouchableOpacity } from "react-native";
 import { useState } from "react";
 
 export default function App() {
@@ -16,13 +16,32 @@ export default function App() {
 
   const getColor = (dark, light) => (darkTheme ? dark : light);
 
+
+ const Btn = ({title})=>(
+      <TouchableOpacity style={{padding:10,
+        borderRadius:10,
+        elevation:2,
+        backgroundColor:getColor(colors.light1,colors.dark1),
+        height:70,
+        width:70,
+        margin:16
+       }}>
+           <Text style={{fontSize:37, color:"black"
+           ,
+           textAlign:'center',
+           textAlignVertical:'center'
+          
+          }}>{title}</Text>
+      </TouchableOpacity>
+ )
+
   return (
     <View
       style={{
         height: "100%",
         width: "100%",
         paddingVertical: 20,
-        backgroundColor: getColor(colors.dark, colors.light),
+        backgroundColor: getColor(colors.light, colors.dark),
       }}
     >
       <StatusBar style="auto" />
@@ -44,11 +63,23 @@ export default function App() {
        {result}
       </Text>
 
-        <View style={{flexDirection:'row'}}>
-            <TouchableOpacity>
-                <Text>1</Text>
-            </TouchableOpacity>
-
+        <View style={{flexDirection:'row', flexWrap:'wrap'}}>
+            <Btn title="7"/>
+            <Btn title="8"/>
+            <Btn title="9"/>
+            <Btn title="%"/> 
+            <Btn title="4"/>
+            <Btn title="5"/>
+            <Btn title="5"/>
+            <Btn title="."/>
+            <Btn title="1"/>
+            <Btn title="2"/>
+            <Btn title="3"/>
+            <Btn title="+"/>
+            <Btn title="00"/>
+            <Btn title="0"/>
+            <Btn title="."/>
+            <Btn title="="/>                               
         </View>
 
     </View>
