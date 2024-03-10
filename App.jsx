@@ -16,24 +16,30 @@ export default function App() {
 
   const getColor = (dark, light) => (darkTheme ? dark : light);
 
-
- const Btn = ({title})=>(
-      <TouchableOpacity style={{padding:10,
-        borderRadius:10,
-        elevation:2,
-        backgroundColor:getColor(colors.light1,colors.dark1),
-        height:70,
-        width:70,
-        margin:16
-       }}>
-           <Text style={{fontSize:37, color:"black"
-           ,
-           textAlign:'center',
-           textAlignVertical:'center'
-          
-          }}>{title}</Text>
-      </TouchableOpacity>
- )
+  const Btn = ({ title }) => (
+    <TouchableOpacity
+      style={{
+        padding: 10,
+        borderRadius: 10,
+        elevation: 2,
+        backgroundColor: getColor(colors.light1, colors.dark1),
+        height: 65,
+        width: 65,
+        margin: 16,
+      }}
+    >
+      <Text
+        style={{
+          fontSize: 30,
+          color: "black",
+          textAlign: "center",
+          textAlignVertical: "center",
+        }}
+      >
+        {title}
+      </Text>
+    </TouchableOpacity>
+  );
 
   return (
     <View
@@ -44,7 +50,7 @@ export default function App() {
         backgroundColor: getColor(colors.light, colors.dark),
       }}
     >
-      <StatusBar style="auto" />
+      
       <Switch
         value={darkTheme}
         onValueChange={() => setDarkTheme(!darkTheme)}
@@ -57,35 +63,45 @@ export default function App() {
           color: getColor(colors.dark, colors.light),
           width: "100%",
           textAlign: "right",
-          paddingRight:20
+          paddingRight: 20,
+          marginTop:120
+          ,
+          paddingBottom:20
         }}
       >
-       {result}
+        {result}
       </Text>
 
-        <View style={{flexDirection:'row', flexWrap:'wrap' , width:'140%'} }>
-             <Btn title="C"/>
-            <Btn title="DL"/>
-            <Btn title="/"/>
-            <Btn title="%"/>
-            <Btn title="7"/>
-            <Btn title="8"/>
-            <Btn title="9"/>
-       
-            <Btn title="4"/>
-            <Btn title="5"/>
-            <Btn title="5"/>
-            <Btn title="."/>
-            <Btn title="1"/>
-            <Btn title="2"/>
-            <Btn title="3"/>
-            <Btn title="+"/>
-            <Btn title="00"/>
-            <Btn title="0"/>
-            <Btn title="."/>
-            <Btn title="="/>                               
-        </View>
-
+      <View
+        style={{
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          backgroundColor:getColor(colors.light2 ,colors.dark2),
+          borderRadius:20
+        }}
+      >
+        <Btn title="C" />
+        <Btn title="DL" />
+        <Btn title="/" />
+        <Btn title="%" />
+        <Btn title="7" />
+        <Btn title="8" />
+        <Btn title="9" />
+        <Btn title="*" />
+        <Btn title="4" />
+        <Btn title="5" />
+        <Btn title="6" />
+        <Btn title="-" />
+        <Btn title="1" />
+        <Btn title="2" />
+        <Btn title="3" />
+        <Btn title="+" />
+        <Btn title="00" />
+        <Btn title="0" />
+        <Btn title="." />
+        <Btn title="=" />
+      </View>
     </View>
   );
 }
