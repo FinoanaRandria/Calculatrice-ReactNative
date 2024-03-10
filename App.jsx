@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function App() {
   const [darkTheme, setDarkTheme] = useState(false);
+  const [result, setResult] = useState("test");
   const colors = {
     dark: "#22252D",
     dark1: "#292B36",
@@ -13,13 +14,15 @@ export default function App() {
     light2: "#F7F7F7",
   };
 
+  const getColor = (dark, light) => (darkTheme ? dark : light);
+
   return (
     <View
       style={{
         height: "100%",
         width: "100%",
         paddingVertical: 20,
-        backgroundColor: darkTheme ? colors.dark : colors.light,
+        backgroundColor: getColor(colors.dark, colors.light),
       }}
     >
       <StatusBar style="auto" />
@@ -28,6 +31,26 @@ export default function App() {
         onValueChange={() => setDarkTheme(!darkTheme)}
         thumbColor={darkTheme ? colors.dark : colors.light}
       />
+
+      <Text
+        style={{
+          fontSize: 40,
+          color: getColor(colors.light, colors.dark),
+          width: "100%",
+          textAlign: "right",
+          paddingRight:20
+        }}
+      >
+       {result}
+      </Text>
+
+        <View style={{flexDirection:'row'}}>
+            <TouchableOpacity>
+                <Text>1</Text>
+            </TouchableOpacity>
+
+        </View>
+
     </View>
   );
 }
