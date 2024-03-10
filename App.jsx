@@ -54,7 +54,7 @@ export default function App() {
       <Text
         style={{
           fontSize: 40,
-          color: getColor(colors.light, colors.dark),
+          color: getColor(colors.dark, colors.light),
           width: "100%",
           textAlign: "right",
           paddingRight:20
@@ -63,11 +63,15 @@ export default function App() {
        {result}
       </Text>
 
-        <View style={{flexDirection:'row', flexWrap:'wrap'}}>
+        <View style={{flexDirection:'row', flexWrap:'wrap' , width:'140%'} }>
+             <Btn title="C"/>
+            <Btn title="DL"/>
+            <Btn title="/"/>
+            <Btn title="%"/>
             <Btn title="7"/>
             <Btn title="8"/>
             <Btn title="9"/>
-            <Btn title="%"/> 
+       
             <Btn title="4"/>
             <Btn title="5"/>
             <Btn title="5"/>
