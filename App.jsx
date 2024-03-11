@@ -44,7 +44,7 @@ export default function App() {
   );
  
    
-  const getBtnColor = (light,dark)=>darkTheme?colors.light1:colors.dark2
+  
 
  
   return (
