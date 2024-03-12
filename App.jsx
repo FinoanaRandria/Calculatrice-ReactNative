@@ -15,11 +15,26 @@ export default function App() {
   };
 
  
- 
+  //fonction de calcul
+
+  const calculate = (title)=>{
+    if(title =='C'){
+      setResult('')
+    }else if (title == 'DL'){
+       setResult(result.substring(0,result.length -1 ))
+    }else if (title =="="){
+      //pour reduire a 3 chiffre apres la virgule 
+       const ans = Number(eval(result).toFixed(3)).toString()
+      //setResult(eval(result))
+      setResult(ans)
+    }else{
+       setResult(result + title)
+    }
+  }
 
   const Btn = ({ title ,type }) => (
     <TouchableOpacity
-    onPress={()=>{}}
+    onPress={()=>{calculate(title)}}
       style={{
         padding: 10,
         borderRadius: 10,
