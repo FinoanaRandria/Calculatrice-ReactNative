@@ -14,9 +14,10 @@ export default function App() {
     light2: "#F7F7F7",
   };
 
-  const getColor = (dark, light) => (darkTheme ? dark : light);
+ 
+ 
 
-  const Btn = ({ title }) => (
+  const Btn = ({ title ,type }) => (
     <TouchableOpacity
     onPress={()=>{}}
       style={{
@@ -33,16 +34,29 @@ export default function App() {
       <Text
         style={{
           fontSize: 30,
-          color: "black",
+          color: 'black',
           textAlign: "center",
           textAlignVertical: "center",
+          color: getBtnColor(type),
         }}
       >
         {title}
       </Text>
     </TouchableOpacity>
   );
- 
+  const getBtnColor = (type) => {
+    if (type == 'top' ) {
+      return '#35FBD6'
+    } else if(type == 'right') {
+      return '#EB6363'
+    }
+    return getColor(colors.dark, colors.light);
+  }
+
+  const getColor = (light, dark) => (darkTheme ? dark : light);
+
+
+  
    
   
 
